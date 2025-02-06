@@ -21,30 +21,52 @@ function inserirTurismos(turismos) {
 }
 
 function inserirTurismo(turismo) {
+    
     let tbody = document.getElementById('turismos');
+    
     let tr = document.createElement('tr');
+    
     let tdId = document.createElement('td');
     tdId.innerHTML = turismo.id;
+    
     let tdNome = document.createElement('td');
     tdNome.innerHTML = turismo.nome;
+    
     let tdDescricao = document.createElement('td');
     tdDescricao.innerHTML = turismo.descricao;
+    
     let tdCidade = document.createElement('td');
     tdCidade.innerHTML = turismo.cidade;
+    
     let tdPais = document.createElement('td');
-    tdPais.innerHTML = turismo.Pais;
+    tdPais.innerHTML = turismo.pais;
+    
     let tdAlterar = document.createElement('td');
     let btnAlterar = document.createElement('button');
     btnAlterar.innerHTML = "Alterar";
     btnAlterar.addEventListener("click", buscaTurismo, false);
     btnAlterar.id = turismo.id;
+    btnAlterar.className = "btn waves-effect waves-light orange darken-4 white-text";
+    let iconeAlterar = document.createElement('i');
+    iconeAlterar.innerHTML = "edit";
+    iconeAlterar.className = "material-icons right";
+    btnAlterar.appendChild(iconeAlterar);
     tdAlterar.appendChild(btnAlterar);
+
     let tdExcluir = document.createElement('td');
     let btnExcluir = document.createElement('button');
     btnExcluir.addEventListener("click", excluir, false);
     btnExcluir.id = turismo.id;
-    btnExcluir.innerHTML = "Excluir";
+    btnExcluir.className = "btn waves-effect waves-light orange darken-4 white-text";
+    let iconeExcluir = document.createElement('i');
+    iconeExcluir.innerHTML = "delete";
+    iconeExcluir.className = "material-icons right";
+    btnExcluir.appendChild(iconeExcluir);
     tdExcluir.appendChild(btnExcluir);
+    tdExcluir.appendChild(btnExcluir);
+    btnExcluir.innerHTML = "Excluir";
+    
+    
     tr.appendChild(tdId);
     tr.appendChild(tdNome);
     tr.appendChild(tdDescricao);
