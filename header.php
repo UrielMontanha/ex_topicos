@@ -10,9 +10,7 @@ $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
             <div class="nav-wrapper">
 
                 <!-- Logo -->
-                <a href="#" class="brand-logo">
-                    <img class="responsive-img" src="css/imagens/MUSEU_MUNICIPAL.png" alt="TURISMO">
-                </a>
+                <a href="#" class="brand-logo">TURISMO</a>
 
                 <!-- Menu para telas grandes -->
                 <ul class="right hide-on-med-and-down">
@@ -23,10 +21,10 @@ $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
                         <a href="index.php">Início</a>
                     </li>
 
-                    <li style="margin-right: 80px;" class="<?php if ($pagina_Corrente == 'form_museu.php') {
+                    <li style="margin-right: 80px;" class="<?php if ($pagina_Corrente == 'crud_tur.php') {
                                                                 echo 'active';
                                                             } ?>">
-                        <a href="form_museu.php">Visitar</a>
+                        <a href="crud_tur.php">Gerenciar locais</a>
                     </li>
 
                     <!-- Menu mobile -->
@@ -37,33 +35,11 @@ $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
                             <a href="index.php">Início</a>
                         </li>
 
-                        <li class="<?php if ($pagina_Corrente == 'form_museu.php') {
+                        <li class="<?php if ($pagina_Corrente == 'crud_tur.php') {
                                         echo 'active';
                                     } ?>">
-                            <a href="form_museu.php">Visitar</a>
+                            <a href="crud_tur.php">Gerenciar locais</a>
                         </li>
-
-                        <li>
-                            <h5>
-                                <?php
-                                if (!empty($_SESSION['usuario'])) {
-                                    $logado = 'Usuário';
-                                }
-                                if (isset($_SESSION['usuario'])) {
-                                    $logado = $_SESSION['usuario'];
-                                }
-                                echo "Olá " . $logado;
-                                ?>
-                            </h5>
-                        </li>
-
-                        <?php if ($_SESSION['usuario']) { ?>
-                            <li class="<?php if ($pagina_Corrente == 'sair.php') {
-                                            echo 'active';
-                                        } ?>">
-                                <a href="sair.php">Sair</a>
-                            </li>
-                        <?php }  ?>
 
                     </ul>
 
