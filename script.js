@@ -65,7 +65,6 @@ function inserirTurismo(turismo) {
     btnExcluir.appendChild(iconeExcluir);
     tdExcluir.appendChild(btnExcluir);
     
-    
     tr.appendChild(tdId);
     tr.appendChild(tdNome);
     tr.appendChild(tdCidade);
@@ -96,6 +95,7 @@ function excluirTurismo(retorno, id) {
         for (const tr of tbody.children) {
             if (tr.children[0].innerHTML == id) {
                 tbody.removeChild(tr);
+                M.toast({html: 'Local turístico excluído', classes: 'red darken-2'});
             }
         }
     }
@@ -106,12 +106,12 @@ function alterarTurismo(turismo) {
     for (const tr of tbody.children) {
         if (tr.children[0].innerHTML == turismo.id) {
             tr.children[1].innerHTML = turismo.nome;
-            tr.children[2].innerHTML = turismo.descricao;
-            tr.children[3].innerHTML = turismo.cidade;
-            tr.children[4].innerHTML = turismo.pais;
+            tr.children[2].innerHTML = turismo.cidade;
+            M.toast({html: 'Local turístico atualizado', classes: 'blue darken-1'});
         }
     }
 }
+
 
 function buscaTurismo(evt) {
     let id = evt.currentTarget.id;
@@ -179,7 +179,10 @@ function cadastrar(id, nome, descricao, cidade, pais) {
         }
     )
         .then(response => response.json())
-        .then(turismo => inserirTurismo(turismo))
+        .then(turismo => {
+            inserirTurismo(turismo);
+            M.toast({html: 'Local turístico cadastrado', classes: 'green darken-1'});
+        })
         .catch(error => console.log(error));
 }
 

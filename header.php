@@ -10,7 +10,7 @@ $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
             <div class="nav-wrapper">
 
                 <!-- Logo -->
-                <a href="#" class="brand-logo">TURISMO</a>
+                <a href="#" class="brand-logo"><img src="imagens/Turismo.png" alt="Turismo" height="60px"></a>
 
                 <!-- Menu para telas grandes -->
                 <ul class="right hide-on-med-and-down">

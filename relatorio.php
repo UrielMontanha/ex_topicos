@@ -1,8 +1,14 @@
 <?php
-require_once "conect.php";
+require_once "conexao.php";
 require 'dompdf/autoload.inc.php';
 use Dompdf\Dompdf;
 use Dompdf\Options;
+
+
+
+$conexao = conectar();
+
+
 
 // Configurar opções do DOMPDF
 $options = new Options();
@@ -32,7 +38,7 @@ td {
 }
 
 th {
-  background: #424242;
+  background: #01579b;
   color: white;
 }
 
@@ -40,7 +46,7 @@ tr:nth-child(even)
 	{background-color: #bdbdbd}
 thead 
 {
-  background-color: #9e9e9e;
+  background-color: #90a4ae;
   color: white;
 }
 </style>
@@ -49,9 +55,8 @@ thead
 ';
 
 
-
+$dados .= "<h1 style ='text-align: center;'> <img src='http://localhost/ex_topicos/imagens/Turismo.png' height='70px'> </h1>";
 $dados .= "<h1 style ='text-align: center;'> Relatório </h1>";
-$dados .= "<h2 style = 'text-align: center;'> Pontos Turísticos <img src='http://localhost/css_materialize_topicos/imagens/helmet.png' height='35' width='40'> </h2>";
 
 
 
@@ -59,23 +64,20 @@ $dados .="<table>
 <thead>
 <tr>
 <th>ID</th>
-<th>CPF</th>
 <th>Nome</th>
-<th>Data de nascimento</th>
+<th>Cidade</th>
 </tr>
 </thead>
 <tbody>";
 
-$sql = "SELECT id,CPF,nomeCliente,dataNasc FROM clientes";
+$sql = "SELECT id,nome,cidade FROM turismo";
   $resultado = mysqli_query($conexao,$sql); 
   while($linha = mysqli_fetch_assoc($resultado))
   {
     $dados .= "<tr>";
     $dados .= '<td>' . $linha['id'] . '</td>';
-    $dados .= '<td>'. $linha['CPF'] . '</td>'; 
-    $dados .= '<td>' . $linha['nomeCliente'] . '</td>'; 
-    $dataNasc = date('d/m/Y',strtotime($linha['dataNasc']));
-    $dados .= '<td>' .$dataNasc . '</td>';
+    $dados .= '<td>'. $linha['nome'] . '</td>'; 
+    $dados .= '<td>' . $linha['cidade'] . '</td>'; 
     $dados .= "</tr>";     
   }       
   $dados .= "</tbody>";
