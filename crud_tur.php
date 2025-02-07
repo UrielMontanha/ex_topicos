@@ -118,7 +118,7 @@
 
         <main class="container">
 
-            <h1 class="center-align"> Gerenciamento </h1>
+            <h1 class="center-align"> Inserir local turístico </h1>
             <div class="card-panel">
 
                 <div class="row">
@@ -184,8 +184,13 @@
 
 
     <main class="container">
-
         <div class="card-panel">
+
+            <h1 class="center-align"> Gerenciamento </h1>
+
+            <a href="relatorio.php" class="blue-grey darken-3 waves-effect waves-light btn"><i class="material-icons right">add</i>Gerar relatório</a>
+
+            <br><br><br>
 
             <table>
                 <thead>
@@ -198,7 +203,7 @@
                 </thead>
                 <tbody id="turismos"></tbody>
             </table>
-        
+
         </div>
 
     </main>
