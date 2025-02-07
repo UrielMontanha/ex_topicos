@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 28/11/2024 às 18:16
+-- Tempo de geração: 07/02/2025 às 12:57
 -- Versão do servidor: 8.3.0
 -- Versão do PHP: 8.2.18
 
@@ -18,32 +18,34 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `mitologias`
+-- Banco de dados: `turismo`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `mito`
+-- Estrutura para tabela `turismo`
 --
 
-DROP TABLE IF EXISTS `mito`;
-CREATE TABLE IF NOT EXISTS `mito` (
+DROP TABLE IF EXISTS `turismo`;
+CREATE TABLE IF NOT EXISTS `turismo` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `no_mit` varchar(255) NOT NULL,
-  `no_de` varchar(255) NOT NULL,
-  `historia` varchar(255) NOT NULL,
-  `arquivo` varchar(255) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `cidade` varchar(255) NOT NULL,
+  `pais` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Despejando dados para a tabela `mito`
+-- Despejando dados para a tabela `turismo`
 --
 
-INSERT INTO `mito` (`id`, `no_mit`, `no_de`, `historia`, `arquivo`) VALUES
-(11, 'kk', 'kk', 'kk', ''),
-(10, 'ss', 'ss', 'ss', '');
+INSERT INTO `turismo` (`id`, `nome`, `descricao`, `cidade`, `pais`) VALUES
+(14, 'asdasd', 'Aldeído CH2O', 'Aldelandia', 'Aldedonis'),
+(16, 'dd', 'dd', 'dd', 'dd'),
+(13, 'Torre Effiel', 'Torre efel muito legal ', 'Paris', 'França'),
+(17, 'sss', 'sss', 'sss', 'sss');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

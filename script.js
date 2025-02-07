@@ -46,7 +46,7 @@ function inserirTurismo(turismo) {
     btnAlterar.innerHTML = "Alterar";
     btnAlterar.addEventListener("click", buscaTurismo, false);
     btnAlterar.id = turismo.id;
-    btnAlterar.className = "btn waves-effect waves-light orange darken-4 white-text";
+    btnAlterar.className = "btn waves-effect waves-light light-blue darken-4 white-text";
     let iconeAlterar = document.createElement('i');
     iconeAlterar.innerHTML = "edit";
     iconeAlterar.className = "material-icons right";
@@ -57,21 +57,18 @@ function inserirTurismo(turismo) {
     let btnExcluir = document.createElement('button');
     btnExcluir.addEventListener("click", excluir, false);
     btnExcluir.id = turismo.id;
-    btnExcluir.className = "btn waves-effect waves-light orange darken-4 white-text";
+    btnExcluir.className = "btn waves-effect waves-light red darken-4 white-text";
+    btnExcluir.innerHTML = "Excluir";
     let iconeExcluir = document.createElement('i');
     iconeExcluir.innerHTML = "delete";
     iconeExcluir.className = "material-icons right";
     btnExcluir.appendChild(iconeExcluir);
     tdExcluir.appendChild(btnExcluir);
-    tdExcluir.appendChild(btnExcluir);
-    btnExcluir.innerHTML = "Excluir";
     
     
     tr.appendChild(tdId);
     tr.appendChild(tdNome);
-    tr.appendChild(tdDescricao);
     tr.appendChild(tdCidade);
-    tr.appendChild(tdPais);
     tr.appendChild(tdAlterar);
     tr.appendChild(tdExcluir);
     tbody.appendChild(tr);
@@ -182,7 +179,7 @@ function cadastrar(id, nome, descricao, cidade, pais) {
         }
     )
         .then(response => response.json())
-        .then(turismo => inserirUsuario(turismo))
+        .then(turismo => inserirTurismo(turismo))
         .catch(error => console.log(error));
 }
 

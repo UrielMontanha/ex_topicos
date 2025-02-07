@@ -168,7 +168,7 @@
                 <div class="row">
                     <div class="col s12">
                         <p class="center-align">
-                            <button class="btn waves-effect waves-light #0d47a1 blue darken-4" type="submit" name="action"><i class="material-icons right">send</i>Salvar</button>
+                            <button class="btn waves-effect waves-light blue-grey darken-3" type="submit" name="action"><i class="material-icons right">send</i>Salvar</button>
                         </p>
                     </div>
                 </div>
@@ -192,9 +192,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Nome do ponto turistico</th>
-                        <th>Descrição</th>
                         <th>Cidade</th>
-                        <th>País</th>
                         <th cosplan="2">Opções</th>
                     </tr>
                 </thead>
