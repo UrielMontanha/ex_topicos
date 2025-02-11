@@ -208,7 +208,27 @@
 
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js">
+        document.addEventListener("DOMContentLoaded", () => {
+        listarTodos();
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+        });
+
+    </script>
+
+                        <!--------------------------------------------- Só para organização -------------------------------------------------------->
+
+    <div id="modalConfirmacao" class="modal">
+        <div class="modal-content">
+        <h4>Confirmar exclusão</h4>
+        <p>Você tem certeza que deseja excluir este local turístico?</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close red white-text darken-4 btn-flat">Cancelar</a>
+            <a href="#!" id="confirmarExcluir" class="modal-close green white-text btn-flat">Confirmar</a>
+        </div>
+    </div>
 
 
 

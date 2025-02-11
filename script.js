@@ -75,19 +75,22 @@ function inserirTurismo(turismo) {
 
 function excluir(evt) {
     let id = evt.currentTarget.id;
-    let excluir = confirm("Você tem certeza que deseja excluir estas informações?");
-    if (excluir == true) {
-        fetch('excluir.php?id=' + id,
-            {
-                method: "GET",
-                headers: { 'Content-Type': "application/json; charset=UTF-8" }
-            }
-        )
-            .then(response => response.json())
-            .then(retorno => excluirTurismo(retorno, id))
-            .catch(error => console.log(error));
-    }
+
+    const botaoExcluir = document.getElementById('confirmarExcluir');
+    botaoExcluir.onclick = function() {
+        fetch('excluir.php?id=' + id, {
+            method: "GET",
+            headers: { 'Content-Type': "application/json; charset=UTF-8" }
+        })
+        .then(response => response.json())
+        .then(retorno => excluirTurismo(retorno, id))
+        .catch(error => console.log(error));
+    };
+
+    var instance = M.Modal.init(document.getElementById('modalConfirmacao'));
+    instance.open();
 }
+
 
 function excluirTurismo(retorno, id) {
     if (retorno == true) {
